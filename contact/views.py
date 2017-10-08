@@ -7,6 +7,8 @@ import json, urllib.request, smtplib, os
 
 
 def send_email(name, phone, email, comment):
+    pw = os.environ.get('PW')
+
     fromx = 'aargiros@gmail.com'
     to  = 'aargiros@gmail.com'
     body = 'NAME: ' + name + '\nPHONE: ' + phone + '\nEMAIL: ' + email + '\nCOMMENT: ' + comment
@@ -20,7 +22,7 @@ def send_email(name, phone, email, comment):
     server = smtplib.SMTP('smtp.gmail.com:587')
     server.starttls()
     server.ehlo()
-    server.login('aargiros@gmail.com', "os.environ['PW']")
+    server.login('aargiros@gmail.com', pw)
     server.sendmail(fromx, to, msg.as_string())
     server.quit()
 

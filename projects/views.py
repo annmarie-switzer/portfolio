@@ -9,7 +9,7 @@ import json, urllib.request, random, os
 # Create your views here.
 
 def projects(request):
-	img_key = "os.environ['images_api']"
+	img_key = os.environ.get('images_api')
 	apps = {
 		'calculator': {
 			'name': 'Calculator',
