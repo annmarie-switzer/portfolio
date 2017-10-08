@@ -20,7 +20,7 @@ def send_email(name, phone, email, comment):
     server = smtplib.SMTP('smtp.gmail.com:587')
     server.starttls()
     server.ehlo()
-    server.login('aargiros@gmail.com', "os.environ['pw']")
+    server.login('aargiros@gmail.com', "os.environ['PW']")
     server.sendmail(fromx, to, msg.as_string())
     server.quit()
 

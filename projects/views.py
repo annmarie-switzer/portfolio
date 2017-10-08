@@ -3,7 +3,7 @@ from django.views import View
 from django.views.generic.base import TemplateView
 from django.http import JsonResponse
 
-import json, urllib.request, random
+import json, urllib.request, random, os
 # from portfolio.settings_secret import images_api, weather_api
 
 # Create your views here.
@@ -59,10 +59,10 @@ def projects(request):
 		'apps': apps,
 		'img_key': img_key,	
 	}
-
 	return render(request, 'projects/projects.html', context)
 
 def api(request):
-	weather_api = "os.environ['weather_api']"
+	weather_api = os.environ.get('weather_api')
 	data = {'weather_api': weather_api}
 	return JsonResponse(data)
+
