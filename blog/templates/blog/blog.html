@@ -1,0 +1,57 @@
+{% extends 'home/base.html' %}
+{% block body %}
+
+<div class="container">
+	
+	<!-- Small Screen Categories Column -->
+	<div class="dropdown d-md-none d-lg-none d-xl-none text-center mt-4">
+		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Filters
+		</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		    <a class="dropdown-item tag btn btn-link font-italic" href="#">Show All</a>
+		    {% for c in categories %}
+		    	<a class="dropdown-item tag btn btn-link" href="#" id="{{ c.slug }}">{{ c.name }}</a>
+		    {% endfor %}
+		</div>
+	</div>
+
+
+	<div class="row justify-content-center" style="margin-top: 8%;">
+		
+		<!-- Post Column -->
+		<div class="col-md-8">	
+			{% for p in posts %}
+				<div class="blog-post mb-5">
+					<a href="{{ p.slug }}">
+						<h2 class="text-capitalize mb-0">{{ p.title|safe }}</h2>
+						<p class="text-muted"><small>{{ p.posted_date }}</small></p>
+						<p class="mb-0">{{ p.create_summary|safe }}</p>
+						<p class="text-muted tag-list"><small>tags: {{ p.display_categories }}</small></p>
+					</a><hr>
+				</div>
+			{% endfor %}
+		</div>
+
+
+		<!-- Large Screen Categories Column -->
+		<div class="col-md-4 d-none d-md-block text-right">
+			<h5>Filter by Tag</h5>
+			<ul class="list-unstyled">
+				<li class="btn btn-link tag font-italic">Show All</li><br>
+				{% for c in categories %}
+					<li class="btn btn-link tag" id="{{ c.slug }}">{{ c.name }}</li><br>
+				{% endfor %}
+			</ul>
+		</div>
+
+	</div> <!-- End Row -->
+</div>
+{% endblock %}
+
+{% block scripts %}
+	{% load staticfiles %}
+	<script src="{% static 'blog/js/blog.js' %}"></script>
+{% endblock %}
+
+

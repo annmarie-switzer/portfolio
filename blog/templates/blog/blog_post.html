@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+{% block body %}
+
+<div class="container mt-5">
+	<div class="row justify-content-center align-items-center">
+		<div class="col-lg-8 col-md-10">
+			<h2 class="text-capitalize">{{ p.title|safe }}</h2>
+			<p class="text-muted">Posted on {{ p.posted_date }}</p>
+			<p>{{ p.body|safe }}</p>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+	{% load staticfiles %}
+	<script src="{% static 'blog/js/blog.js' %}"></script>
+{% endblock %}
+ mt-5

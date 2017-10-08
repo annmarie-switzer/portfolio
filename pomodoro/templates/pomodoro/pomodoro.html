@@ -1,0 +1,46 @@
+{% load staticfiles %}
+
+
+	<div class="pomodoro card bg-dark text-light">
+		
+		<audio id="timer-sound" src="{% static 'pomodoro/sounds/multimedia_alert_tone_piano_glock_005.mp3' %}"></audio>
+		
+		<div class="card-body">
+			<div class="row">
+				<div class="col-12 text-center">
+					<h4 class="card-title" id="timer-label">Session</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 text-center" id="timer">
+					<span class="card-title" id="minutes"></span>
+					<span class="card-title" id="colon">:</span>
+					<span class="card-title" id="seconds"></span>
+					<span class="card-title" id="fin"></span>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="offset-col-2 col-8">
+					<button id="start-button" type="button" class="btn btn-primary btn-block btn-lg text-uppercase">Start</button>
+				</div>
+			</div>
+
+			<br>
+
+			<div class="row align-items-center">
+				<div class="col-4 text-center">
+					<label for="session" class="col-form-label">Session (min)</label>
+					<input type="number" class="pom-form form-control form-control-lg rounded-0 text-light" id="session" value="25">
+				</div>
+				<div class="col-4 text-center">
+					<button id="reset-button" type="button" class="btn btn-outline-secondary"><i id="reset-icon" class="fa fa-repeat fa-2x text-light"></i></button>
+				</div>
+				<div class="col-4 text-center">
+					<label for="break" class="col-form-label">Break (min)</label>
+					<input type="number" class="pom-form form-control form-control-lg rounded-0 text-light" id="break" value="5">
+				</div>
+			</div>
+		</div>
+
+
+	</div>

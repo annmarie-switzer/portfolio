@@ -1,0 +1,50 @@
+{% load staticfiles %}
+
+<div class="container-fluid" id="simon-div">
+
+	<audio id="sound1" src="{% static 'simon/sounds/simonSound1.mp3' %}"></audio>
+	<audio id="sound2" src="{% static 'simon/sounds/simonSound2.mp3' %}"></audio>
+	<audio id="sound3" src="{% static 'simon/sounds/simonSound3.mp3' %}"></audio>
+	<audio id="sound4" src="{% static 'simon/sounds/simonSound4.mp3' %}"></audio>
+
+	<div id="menu">
+		<div class="row justify-content-center">
+		    <div class="btn-group mb-3" role="group" data-toggle="buttons">
+		    	<label class="btn btn-lg btn-outline-primary active" id="start">
+					<input type="radio" class="btn" id="start"><i class="fa fa-play" id="start-icon"></i>
+				</label>
+		    	<label class="btn btn-lg btn-outline-primary" id="level-label">
+					<input type="radio">Level
+				</label>
+				<label class="btn btn-lg btn-outline-primary" id="level">
+					<input type="radio">
+				</label>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="btn-group mb-3" role="group" data-toggle="buttons">
+				<label class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="You'll get a hint when you mess up." id="easy">
+					<input type="radio" name="game-mode" id="easy-radio">Easy
+				</label>
+				<label class="btn btn-outline-info active" data-toggle="tooltip" data-placement="top" title="If you mess up, game over." id="hard">
+					<input type="radio" name="game-mode" id="hard-radio" checked>Hard
+				</label>
+			</div>
+		</div>
+	</div>
+	
+	<div id="play-area">
+		<div class="row justify-content-center">
+			<button type="button" class="btn btn-success rounded-0 sound-btn" id="sound1btn"></button>
+			<button type="button" class="btn btn-danger rounded-0 sound-btn" id="sound2btn"></button>
+		</div>
+		<div class="row justify-content-center">
+			<button type="button" class="btn btn-warning rounded-0 sound-btn" id="sound4btn"></button>
+			<button type="button" class="btn btn-info rounded-0 sound-btn" id="sound3btn"></button>
+		</div>
+
+		<span class="text-center" id="game-over">Game Over</span>
+
+	</div>
+	
+</div>

@@ -1,0 +1,290 @@
+
+/* ---------- MISC ---------- */
+::selection {
+    color: white;
+    background: #009CDC;
+}
+
+.text-primary {
+    color: #593196 !important;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: #593196;
+    text-decoration: none;
+}
+
+.colored-link {
+    color: #593196 !important; 
+}
+
+.project-hr {
+  max-width: 40%;
+  margin: auto;
+  padding: 0;
+  text-align: center;
+  border: none;
+  border-top: solid 3px #17141F;
+}
+
+.python-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* ---------- MAIN ---------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 45px; /* Margin bottom by footer height */
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* ---------- STICKY FOOTER ---------- */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px; /* Set the fixed height of the footer here */
+    font-size: 14px;
+}
+
+
+/* ---------- HOME ---------- */
+header.masthead {
+    height: 100vh;
+    min-height: 300px;
+    background: url("https://i.imgur.com/mZI5JTx.jpg") center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header.masthead > .overlay {
+    height: 100vh;
+    min-height: 300px;
+    padding: 5rem 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+header.masthead > .overlay > .container {
+   text-align: left;
+   margin-top: 10%;
+}
+
+.my-name > h1 {
+    font-size: 60px;
+}
+
+
+.about-me {
+    font-size: 18px;
+}
+
+@media(max-width: 768px) {
+    body {
+        font-family: 'Roboto', sans-serif !important;
+    }
+
+    header.masthead {
+        background: white;
+    }
+
+    header.masthead > .overlay {
+    height: 100vh;
+    min-height: 300px;
+    padding: 5rem 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0);
+    }
+
+    .navbar {
+        background-color: #17141F !important;
+        position: sticky !important;
+    }
+
+    header.masthead > .overlay > .container {
+        text-align: center;
+        color: #17141F !important;
+        margin-top: 0%;
+    }
+
+    .home-buttons>li {
+        width: 100%;
+        padding-bottom: 5px;
+    }
+    
+}
+
+
+/* ---------- CARDS ---------- */
+
+
+/* ---------- WEATHER ---------- */
+
+
+/* ---------- CALC ---------- */
+.tr-calc {
+    height: 50px;
+}
+
+.calc {
+    width: 50px;
+}
+
+.calc:hover {
+    background: grey !important;
+}
+
+#del-icon {
+   padding-top: 4px;
+}
+
+#display {
+	vertical-align: bottom;
+	font-size: 40px;
+	border-top: none; 
+}
+
+#breadcrumbs {
+	border-bottom: none;
+}
+
+
+/* ---------- POMODORO ---------- */
+
+#timer {
+    font-size: 80px;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.pom-form {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #B2B2B2;
+    text-align: center;
+}
+
+.pom-form:focus {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #B2B2B2;
+}
+
+
+/* ---------- TICTACTOE ---------- */
+.ttt-box {
+    border: solid;
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+}
+
+.ttt-button {
+    background: transparent;
+    border: 1px solid;
+    font-size: 40px;
+}
+
+.selected {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid; 
+    pointer-events: none;
+    font-size: 20px;
+}
+
+.selected:hover {
+    background: transparent;
+}
+
+.deselected {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid transparent; 
+    pointer-events: none;
+    font-size: 20px;
+}
+
+.deselected:hover {
+    background: transparent;
+}
+
+#newgame:hover {
+    border-bottom: 2px solid;
+    cursor: pointer;
+}
+
+#message {
+    border-bottom: 2px solid transparent;
+}
+
+
+/* ---------- SIMON----------  */
+.sound-btn {
+    width: 150px;
+    height: 150px;
+    border: solid 2px white;
+}
+
+.sound-btn:hover {
+    border: solid 2px white;
+}
+
+#sound1btn {
+    border-radius: 70px 0 0 0;
+}
+
+#sound2btn {
+    border-radius: 0 70px 0 0;
+}
+
+#sound4btn {
+    border-radius: 0 0 0 70px;
+}
+
+#sound3btn {
+    border-radius: 0 0 70px 0;
+}
+
+.simon-selected {
+    opacity: 0.4;
+}
+
+#level, #level-label {
+    pointer-events: none;
+}
+
+#play-area {
+    position: relative;
+}
+
+#game-over {
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    top: 35%;
+    font-size: 50px;
+}
+
+.game-over {
+    background: grey;
+    pointer-events: none;
+}
+
+

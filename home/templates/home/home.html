@@ -1,0 +1,62 @@
+{% extends 'home/base.html' %}
+{% block body %}
+{% load staticfiles %}
+
+<header class="masthead">
+	<div class="overlay">
+		
+		<div class="container text-white">
+			
+			<div class="row align-items-center">
+			<div class="col-md-10">
+					
+			<div class="row align-items-center">
+				<div class="col-md-12 my-name">
+					<h1>Annmarie Switzer</h1>
+					<h2>Web Developer</h2>
+				</div>
+			</div>
+			<div class="row align-items-center py-5">
+				<div class="col-md-12">
+					<ul class="list-inline home-buttons m-0">
+						<li class="list-inline-item">
+							<a href="{% url 'projects:projects' %}" class="btn btn-lg btn-block btn-primary">
+								<i class="fa fa-code mr-2"></i> 
+								<span> Projects</span>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a href="https://github.com/bellamira" target="_blank" class="btn btn-lg btn-block btn-primary">
+								<i class="fa fa-github mr-2"></i>
+								<span> GitHub</span>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a href="{% url 'contact:contact' %}" class="btn btn-lg btn-block btn-primary">
+								<i class="fa fa-envelope-o mr-2"></i>
+								<span> Contact</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col-md-9 col-sm-10 d-none d-md-block">
+					<p class="about-me"><!-- My name is Annmarie and I am a web developer based in East Aurora, NY.  -->I build websites that have beauty and brains by integrating efficient back-end code with modern front-end technologies. Check out my <a href="{% url 'projects:projects' %}">projects</a> and let me know if you'd like to <a href="{% url 'contact:contact' %}">work together</a>.</p>
+				</div>
+				<!-- <div class="col-md-7 d-md-none">
+					<p class="about-me">I build websites that have beauty and brains. Send me a message and let's get to work.</p>
+				</div> -->
+			</div>
+			
+			</div>
+			</div>
+
+		</div> <!-- end container -->
+
+	</div> <!-- end overlay -->
+</header> <!-- end masthead -->
+
+{% endblock %}
+
+<!-- integrating effective back-end technologies and with engaging front-end experiences -->

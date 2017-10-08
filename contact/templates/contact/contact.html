@@ -1,0 +1,52 @@
+{% extends 'home/base.html' %}
+{% block body %}
+
+
+<div class="container">
+	<div class="row justify-content-center align-items-center" style="margin-top: 10%;">
+		<div class="col-md-6 px-5">
+			<h2 class="contact-me">Contact Me</h2>
+			<p class="contact-me">I would love to work with you! Please use this form to send me some details about you and your project. My <a href="https://docs.google.com/document/d/1_HhK0R8cWVvzz6zXfJaYLnf3CFuJqCBBKUytZT0Ngi0/edit?usp=sharing" target="_blank" class="colored-link font-weight-bold">resume</a> is also available to view, print, and download.</p>
+		</div>
+		<div class="col-md-6">
+			<form action="{% url 'contact:confirmation' %}" method="post" id="contact-form">
+				{% csrf_token %}
+				<div class="form-group">
+					<label for="name" class="col-form-label">Name</label>
+					<input required class="form-control" type="text" placeholder="Name" id="name" name="name" value="{% if submitbutton %} {{ name }} {% endif %}">
+				</div>
+				<div class="form-group">
+					<label for="email" class="col-form-label">Email</label>
+					<input required class="form-control" type="email" placeholder="Email" id="email" name="email" value="{% if submitbutton %} {{ email }} {% endif %}">
+				</div>
+				<div class="form-group">
+					<label for="phone" class="col-form-label">Phone</label>
+					<input required class="form-control" type="tel" placeholder="716-123-4567" id="phone" name="phone" value="{% if submitbutton %} {{ phone }} {% endif %}">
+				</div>
+				<div class="form-group">
+					<label for="comment" class="col-form-label">Comment</label>
+					<textarea required class="form-control" rows="5" placeholder="Comment" id="comment" name="comment" value="{% if submitbutton %} {{ comment }} {% endif %}"></textarea>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary" id="submit-button" name="submitbutton" value="submit">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	{% if submitbutton %}
+		<div class="row justify-content-center align-items-center py-5">
+			<div class="col-lg-8 alert alert-success text-center">
+				<h5>Thanks for your email!</h5>
+				<p>I will get back to you shortly. In the mean time, please check out the rest of my site.</p>
+			</div>
+		</div>
+	{% endif %}
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+	{% load staticfiles %}
+	<script src="{% static 'contact/js/contact.js' %}"></script>
+{% endblock %}
