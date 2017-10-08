@@ -4,7 +4,7 @@ from django.views.generic.base import TemplateView
 from django.http import JsonResponse
 
 import json, urllib.request, random
-from website.settings_secret import images_api, weather_api
+from portfolio.settings_secret import images_api, weather_api
 
 # Create your views here.
 
