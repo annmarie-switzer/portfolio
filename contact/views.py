@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from email.mime.text import MIMEText
 
 import json, urllib.request, smtplib, os
-from portfolio.settings_secret import pw
+# from portfolio.settings_secret import pw
 
 
 def send_email(name, phone, email, comment):
@@ -20,7 +20,7 @@ def send_email(name, phone, email, comment):
     server = smtplib.SMTP('smtp.gmail.com:587')
     server.starttls()
     server.ehlo()
-    server.login('aargiros@gmail.com', pw)
+    server.login('aargiros@gmail.com', "os.environ['pw']")
     server.sendmail(fromx, to, msg.as_string())
     server.quit()
 

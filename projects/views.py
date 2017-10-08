@@ -4,12 +4,12 @@ from django.views.generic.base import TemplateView
 from django.http import JsonResponse
 
 import json, urllib.request, random
-from portfolio.settings_secret import images_api, weather_api
+# from portfolio.settings_secret import images_api, weather_api
 
 # Create your views here.
 
 def projects(request):
-	img_key = images_api
+	img_key = "os.environ['images_api']"
 	apps = {
 		'calculator': {
 			'name': 'Calculator',
@@ -63,5 +63,6 @@ def projects(request):
 	return render(request, 'projects/projects.html', context)
 
 def api(request):
+	weather_api = "os.environ['weather_api']"
 	data = {'weather_api': weather_api}
 	return JsonResponse(data)
