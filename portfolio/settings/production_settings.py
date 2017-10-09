@@ -19,3 +19,4 @@ DEBUG = False
 
 # Allow all host headers
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost']
+
