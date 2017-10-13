@@ -24,7 +24,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-md navbar-dark {% if 'projects' in request.path or 'blog' in request.path or 'contact' in request.path %} bg-dark sticky-top {% else %} fixed-top {% endif %}">
+	<nav class="navbar navbar-expand-md navbar-dark {% if 'about' in request.path or 'projects' in request.path or 'blog' in request.path or 'contact' in request.path %} bg-dark sticky-top {% else %} fixed-top {% endif %}">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="{% url 'home:home' %}">&nbsp;</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,6 +33,7 @@
 			<div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
 				<div class="navbar-nav mx-auto">
 					<a class="nav-item nav-link {% if 'projects' not in request.path and 'blog' not in request.path and 'contact' not in request.path %} active {% endif %}" href="{% url 'home:home' %}">Home</a>
+					<a class="nav-item nav-link {% if 'about' in request.path %} active {% endif %}" href="{% url 'about:about' %}">About</a>
 					<a class="nav-item nav-link {% if 'projects' in request.path %} active {% endif %}" href="{% url 'projects:projects' %}">Projects</a>
 					<a class="nav-item nav-link {% if 'blog' in request.path %} active {% endif %}" href="{% url 'blog:blog' %}">Blog</a>
 					<a class="nav-item nav-link {% if 'contact' in request.path %} active {% endif %}" href="{% url 'contact:contact' %}">Contact</a>

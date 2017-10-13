@@ -639,3 +639,29 @@ a.btn.disabled, fieldset[disabled] a.btn {
   color: #cbc8d0;
   cursor: not-allowed;
 }
+
+
+/*---------- BORDERS ----------*/
+.border-primary {
+  border-color: #593196 !important;
+}
+
+.border-secondary {
+  border-color: #ccc !important;
+}
+
+.border-info {
+  border-color: #009CDC !important;
+}
+
+.border-success {
+  border-color: #13B955 !important;
+}
+
+.border-warning {
+  border-color: #EFA31D !important;
+}
+
+.border-danger {
+  border-color: #FC3939 !important;
+}
