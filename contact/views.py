@@ -3,7 +3,6 @@ from django.shortcuts import render, get_object_or_404
 from email.mime.text import MIMEText
 
 import json, urllib.request, smtplib, os
-# from portfolio.settings_secret import pw
 
 
 def send_email(name, phone, email, comment):
