@@ -18,7 +18,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 # Allow all host headers
-ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', 'annmarie.io']
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '.annmarie.io']
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'aargiros@gmail.com'
