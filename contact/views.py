@@ -1,28 +1,29 @@
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, get_object_or_404
-from email.mime.text import MIMEText
 
-import json, urllib.request, smtplib, os
+# from email.mime.text import MIMEText
+# import json, urllib.request, smtplib, os
 
+from django.core.mail import send_mail
 
-def send_email(name, phone, email, comment):
-    pw = os.environ.get('PW')
-    fromx = 'aargiros@gmail.com'
-    to  = 'aargiros@gmail.com'
-    body = 'NAME: ' + name + '\nPHONE: ' + phone + '\nEMAIL: ' + email + '\nCOMMENT: ' + comment
+# def send_email(name, phone, email, comment):
+#     pw = os.environ.get('PW')
+#     fromx = 'aargiros@gmail.com'
+#     to  = 'aargiros@gmail.com'
+#     body = 'NAME: ' + name + '\nPHONE: ' + phone + '\nEMAIL: ' + email + '\nCOMMENT: ' + comment
 
-    msg = MIMEText(body)
+#     msg = MIMEText(body)
     
-    msg['Subject'] = 'Contact Form'
-    msg['From'] = fromx
-    msg['To'] = to
+#     msg['Subject'] = 'Contact Form'
+#     msg['From'] = fromx
+#     msg['To'] = to
 
-    server = smtplib.SMTP('smtp.gmail.com:587')
-    server.starttls()
-    server.ehlo()
-    server.login('aargiros@gmail.com', pw)
-    server.sendmail(fromx, to, msg.as_string())
-    server.quit()
+#     server = smtplib.SMTP('smtp.gmail.com:587')
+#     server.starttls()
+#     server.ehlo()
+#     server.login('aargiros@gmail.com', pw)
+#     server.sendmail(fromx, to, msg.as_string())
+#     server.quit()
 
 
 def get(request):
@@ -37,7 +38,20 @@ def post(request):
 	submitbutton = request.POST.get('submitbutton')
 
 	if submitbutton:
-		send_email(name, email, phone, comment)
+		pw = os.environ.get('PW')
+   		fromx = 'aargiros@gmail.com'
+    	to  = 'aargiros@gmail.com'
+    	body = 'NAME: ' + name + '\nPHONE: ' + phone + '\nEMAIL: ' + email + '\nCOMMENT: ' + comment
+		
+		# send_email(name, email, phone, comment)
+
+		send_mail(
+		    'Contact Form',
+		    body,
+		    fromx,
+		    [to],
+		    fail_silently=False,
+		)
 
 	context = {
 		'name': name,
