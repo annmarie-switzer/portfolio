@@ -38,7 +38,8 @@ def post(request):
 	submitbutton = request.POST.get('submitbutton')
 
 	if submitbutton:
-		pw = os.environ.get('PW')
+		# pw = os.environ.get('PW')
+		pw = '1truepioneersleaveeverythingbehind1'
 		fromx = 'aargiros@gmail.com'
 		to  = 'aargiros@gmail.com'
 		body = 'NAME: ' + name + '\nPHONE: ' + phone + '\nEMAIL: ' + email + '\nCOMMENT: ' + comment
