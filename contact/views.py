@@ -48,8 +48,8 @@ def post(request):
 		send_mail(
 		    'Contact Form',
 		    body,
-		    fromx,
-		    [to],
+		    'aargiros@gmail.com',
+		    ['aargiros@gmail.com'],
 		    fail_silently=False,
 		)
 
