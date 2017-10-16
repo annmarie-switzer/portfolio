@@ -7,7 +7,6 @@ import json, urllib.request, smtplib, os
 
 def send_email(name, phone, email, comment):
     pw = os.environ.get('PW')
-
     fromx = 'aargiros@gmail.com'
     to  = 'aargiros@gmail.com'
     body = 'NAME: ' + name + '\nPHONE: ' + phone + '\nEMAIL: ' + email + '\nCOMMENT: ' + comment
