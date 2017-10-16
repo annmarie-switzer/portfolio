@@ -13,7 +13,7 @@ from django.core.mail import send_mail
 #     body = 'NAME: ' + name + '\nPHONE: ' + phone + '\nEMAIL: ' + email + '\nCOMMENT: ' + comment
 
 #     msg = MIMEText(body)
-    
+	
 #     msg['Subject'] = 'Contact Form'
 #     msg['From'] = fromx
 #     msg['To'] = to
@@ -39,18 +39,18 @@ def post(request):
 
 	if submitbutton:
 		pw = os.environ.get('PW')
-   		fromx = 'aargiros@gmail.com'
-    	to  = 'aargiros@gmail.com'
-    	body = 'NAME: ' + name + '\nPHONE: ' + phone + '\nEMAIL: ' + email + '\nCOMMENT: ' + comment
+		fromx = 'aargiros@gmail.com'
+		to  = 'aargiros@gmail.com'
+		body = 'NAME: ' + name + '\nPHONE: ' + phone + '\nEMAIL: ' + email + '\nCOMMENT: ' + comment
 		
 		# send_email(name, email, phone, comment)
 
 		send_mail(
-		    'Contact Form',
-		    body,
-		    'aargiros@gmail.com',
-		    ['aargiros@gmail.com'],
-		    fail_silently=False,
+			'Contact Form',
+			body,
+			'aargiros@gmail.com',
+			['aargiros@gmail.com',],
+			fail_silently=False,
 		)
 
 	context = {
