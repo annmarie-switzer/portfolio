@@ -25,7 +25,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'aargiros@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('PW')
 EMAIL_PORT = 587
-SERVER_EMAIL = EMAIL_HOST_USER
+# SERVER_EMAIL = EMAIL_HOST_USER
 
 ADMINS = (
     ('admin', EMAIL_HOST_USER),
