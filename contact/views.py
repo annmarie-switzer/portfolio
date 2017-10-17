@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404
 
 import os
 from django.core.mail import send_mail
+from portfolio.settings.production_settings import EMAIL_HOST_USER
 
 
 def get(request):
@@ -17,14 +18,13 @@ def post(request):
 	submitbutton = request.POST.get('submitbutton')
 
 	if submitbutton:
-		pw = os.environ.get('PW')
 		body = 'NAME: ' + name + '\nPHONE: ' + phone + '\nEMAIL: ' + email + '\nCOMMENT: ' + comment
 
 		send_mail(
 			'Contact Form',
 			body,
-			'bellamiraharfoot@gmail.com',
-			['bellamiraharfoot@gmail.com',],
+			EMAIL_HOST_USER,
+			[EMAIL_HOST_USER,],
 			fail_silently=False,
 		)
 
