@@ -23,8 +23,8 @@ def post(request):
 		send_mail(
 			'Contact Form',
 			body,
-			'aargiros@gmail.com',
-			['aargiros@gmail.com',],
+			'bellamiraharfoot@gmail.com',
+			['bellamiraharfoot@gmail.com',],
 			fail_silently=False,
 		)
 
