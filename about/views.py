@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404
 def get(request):
 
 	about_data = {
-	'Education': 'I have a B.A. in English and nearly two years of independent study in Programming and Web Development. See my <a href="https://docs.google.com/document/d/103V8QM5Jolj0HsdzSuwHZCPD1LXalgJyyz-AeARKHuo/edit?usp=sharing" class="colored-link font-weight-bold">resume</a> for more details.',
+	'Education': 'I have a B.A. in English and nearly two years of independent study in Programming and Web Development. See my <a href="https://docs.google.com/document/d/103V8QM5Jolj0HsdzSuwHZCPD1LXalgJyyz-AeARKHuo/edit?usp=sharing" target="_blank" class="colored-link font-weight-bold">resume</a> for more details.',
 		'Generation': '"She\'s an older millenial, sir, but she checks out."',
 		'Feelings about Star Wars': 'I think I already answered this.',
 		'Preferred mobile device': 'Current: iPhone<br>Future: Pixel',
