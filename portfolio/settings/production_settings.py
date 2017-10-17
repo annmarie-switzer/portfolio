@@ -21,7 +21,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'bellamiraharfoot@gmail.com'
+EMAIL_HOST_USER = 'aargiros@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('PW')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
