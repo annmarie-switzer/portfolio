@@ -9,7 +9,7 @@
 				<div class="card {% if question == 'Years of service' %} border-warning {% else %} border-primary {% endif %}">
 					<h5 class="card-header text-white {% if question == 'Years of service' %} bg-warning {% else %} bg-primary {% endif %}">{{ question }}</h5>
 					<div class="card-body">
-						<p class="card-text">{{ answer }}</p>
+						<p class="card-text">{{ answer|safe }}</p>
 					</div>
 				</div>
 			
@@ -20,4 +20,3 @@
 
 {% endblock %}
 
-<!-- {% cycle 'bg-primary' 'bg-success' 'bg-secondary' 'bg-info'%} -->
