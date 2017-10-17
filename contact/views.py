@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404
 # from email.mime.text import MIMEText
 # import json, urllib.request, smtplib, os
 
+import os
 from django.core.mail import send_mail
 
 
