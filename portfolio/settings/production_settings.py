@@ -20,12 +20,13 @@ DEBUG = False
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
-EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'aargiros@gmail.com'
+EMAIL_HOST_USER = 'bellamiraharfoot@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get('PW')
 EMAIL_PORT = 587
-# SERVER_EMAIL = EMAIL_HOST_USER
+EMAIL_USE_TLS = True
+
+SERVER_EMAIL = EMAIL_HOST_USER
 
 ADMINS = (
     ('admin', EMAIL_HOST_USER),
