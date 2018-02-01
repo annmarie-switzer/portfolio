@@ -15,10 +15,10 @@ EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-SERVER_EMAIL = EMAIL_HOST_USER
+SERVER_EMAIL = os.environ.get('EMAIL')
 
 ADMINS = (
-    ('admin', EMAIL_HOST_USER),
+    ('admin', os.environ.get('EMAIL')),
 )
 
 MANAGERS = ADMINS
