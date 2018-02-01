@@ -1,9 +1,10 @@
-from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from django.shortcuts import render, get_object_or_404
+#from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+#from portfolio.settings.production_settings import EMAIL_HOST_USER
+from django.shortcuts import render
+from django.core.mail import send_mail
 
 import os
-from django.core.mail import send_mail
-from portfolio.settings.production_settings import EMAIL_HOST_USER
+
 
 
 def get(request):
@@ -11,6 +12,8 @@ def get(request):
 
 
 def post(request):
+	to_email = os.environ.get('EMAIL')
+
 	name = request.POST.get('name')
 	email = request.POST.get('email')
 	phone = request.POST.get('phone')
@@ -23,8 +26,8 @@ def post(request):
 		send_mail(
 			'Contact Form',
 			body,
-			EMAIL_HOST_USER,
-			[EMAIL_HOST_USER,],
+			email,
+			[to_email,],
 			fail_silently=False,
 		)
 
