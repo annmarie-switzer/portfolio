@@ -1,5 +1,3 @@
-#from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-#from portfolio.settings.production_settings import EMAIL_HOST_USER
 from django.shortcuts import render
 from django.core.mail import send_mail
 
