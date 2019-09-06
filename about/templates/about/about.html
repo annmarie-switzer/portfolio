@@ -6,12 +6,20 @@
 		
 		{% for question, answer in about_data.items %}
 			
-				<div class="card {% if question == 'Years of service' %} border-warning {% else %} border-primary {% endif %}">
-					<h5 class="card-header text-white {% if question == 'Years of service' %} bg-warning {% else %} bg-primary {% endif %}">{{ question }}</h5>
-					<div class="card-body">
-						<p class="card-text">{{ answer|safe }}</p>
-					</div>
+			<div class="card 
+				{% if question == 'Future' %} border-warning 
+				{% else %} border-primary 
+				{% endif %}">
+				<h5 class="card-header text-white 
+					{% if question == 'Future' %} bg-warning 
+					{% else %} bg-primary 
+					{% endif %}">
+					{{ question }}
+				</h5>
+				<div class="card-body">
+					<p class="card-text">{{ answer|safe }}</p>
 				</div>
+			</div>
 			
 		{% endfor %}
 
