@@ -20,3 +20,5 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+
+WEATHER_API = os.environ.get('weather_api')

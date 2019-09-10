@@ -1,63 +1,70 @@
+let weather_api;
+
 $(document).ready(function() {
 	$.ajax({
 		url: "/projects/api",
 		success: function(request) {
-			generateWeather(request.weather_api);
+			weather_api = request.weather_api;
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(generateWeather);
+			} else {
+				console.log('geolocation unavailable');
+			}
 		}
 	});
 });
 
 
-function generateWeather(api) {
-	$.getJSON("https://api.wunderground.com/api/" + api + "/conditions/forecast/q/autoip.json", function(json) {
-
-		var fahrenheit = json.current_observation.temp_f;
-		var celcius = json.current_observation.temp_c;
-		var location = json.current_observation.display_location.full;
-		var weather = json.current_observation.weather;
-		var icon_url = json.current_observation.icon_url;
-		var observation_time = json.current_observation.observation_time;
-		var temp = fahrenheit + ' °'
-		var forecast_list = [];
+function generateWeather(position) {
+	const lng = position.coords.longitude;
+	const lat = position.coords.latitude;
+	$.getJSON(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=${weather_api}`, function(json) {
+		console.log(json);	
+		var fahrenheit = kelvinToFahrenheit(json.main.temp);
+		var celcius = kelvinToCelcius(json.main.temp);
+		var location = json.name;
+		var weather = toTitleCase(json.weather[0].description);
+		var icon = json.weather[0].icon;
+		var observation_time = moment.unix(json.dt).format('ll -- LTS');
+		var humidity = json.main.humidity;
+		var pressure = json.main.pressure;
+		var wind_speed = Math.round(json.wind.speed * 2.237);
 
 		$("#location").text(location);
 		$("#temp").text(fahrenheit + " °");
 		$("#current-weather").text(weather);
-		$("#current-weather").append($("<img>").attr("src", icon_url));
+		$("#current-weather").append($("<img>").attr("src", `http://openweathermap.org/img/wn/${icon}@2x.png`));
 		$("#observation-time").text(observation_time);
-
-		for (i=1; i<4; i++) {
-			var day = json.forecast.simpleforecast.forecastday[i].date.weekday_short;
-			var forecast = json.forecast.simpleforecast.forecastday[i].conditions;
-			var icon = json.forecast.simpleforecast.forecastday[i].icon_url;
-
-			forecast_list.push([day, forecast, icon]);
-		};
-
-		for (j=0; j<forecast_list.length; j++) {
-			$("#forecast-div").append($("<td></td>").attr("id", j));
-			$("#"+j).css("width", "33%");
-			$("#"+j).append($("<span></span>").text(forecast_list[j][0]));
-			$("#"+j).append($("<br>"));
-			$("#"+j).append($("<img>").attr("src", forecast_list[j][2]));
-			$("#"+j).append($("<br>"));
-			$("#"+j).append($("<span></span>").text(forecast_list[j][1]));
-			$("#"+j).append($("<br>"));
-		};
-		
+		$("#humidity").text(humidity + '%');
+		$("#pressure").text(pressure + ' hPa');
+		$("#wind").text(wind_speed + ' mph');
 
 		$("#weather-button").on("click", function changeDegree() {
 			if ($("#weather-button").html() == "F") {
 				$("#temp").html(celcius + " °");
 				$("#weather-button").html("C");
-				
 			}
 			else {
 				$("#weather-button").html("F");
 				$("#temp").html(fahrenheit + " °");
-
+		
 			};	
 		});
 	});
+}
 
+function kelvinToFahrenheit(k) {
+	let f = ((9*(k - 273))/5) + 32;
+	return Math.round(f);
+}
+
+function kelvinToCelcius(k) {
+	let c = k - 273;
+	return Math.round(c);
+}
+
+function toTitleCase(str) {
+    return str.replace(/(?:^|\s)\w/g, function(match) {
+        return match.toUpperCase();
+    });
 }

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.views.generic.base import TemplateView
 from django.http import JsonResponse
+from django.conf import settings
 
 import json, urllib.request, random, os
 
@@ -38,13 +39,13 @@ def projects(request):
 		'simon': {
 			'name': 'Simon',
 			'template': 'simon/simon.html',
-			'icon': 'fa fa-delicious fa-3x',
+			'icon': 'fab fa-delicious fa-3x',
 			'url': 'https://github.com/bellamira/portfolio/tree/master/simon'
 			},
 		'wikipedia': {
 			'name': 'Wiki Search',
 			'template': 'wikipedia/wikipedia.html',
-			'icon': 'fa fa-wikipedia-w fa-3x',
+			'icon': 'fab fa-wikipedia-w fa-3x',
 			'url': 'https://github.com/bellamira/portfolio/tree/master/wikipedia'
 			},
 		'workout': {
@@ -62,7 +63,7 @@ def projects(request):
 	return render(request, 'projects/projects.html', context)
 
 def api(request):
-	weather_api = os.environ.get('weather_api')
+	weather_api = settings.WEATHER_API
 	data = {'weather_api': weather_api}
 	return JsonResponse(data)
 
