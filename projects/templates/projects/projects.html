@@ -3,46 +3,70 @@
 
 <div class="container pb-5">
 
-<!-- Python -->
-<!-- <div class="row justify-content-center align-items-center">
-	<div class="col-md-9 pt-5">
-		<h2 class="text-center">Python</h2>
-		<hr class="project-hr">
+	<!-- Angular -->
+	<div class="row justify-content-center align-items-center">
+		<div class="col-md-9 pt-5">
+			<h2 class="text-center">Angular</h2>
+			<hr class="project-hr">
+		</div>
 	</div>
-</div>
-	
-<div class="card-group py-3 justify-content-center">
-	<div class="col-lg-5 col-md-8 mt-4">
-		<a href="http://cale-annmarie-wedding.appspot.com/" target="_blank" class="card python-card text-center">
-			<img id="p2i_demo" class="card-img" alt="Responsive image" src="http://api.page2images.com/directlink?p2i_url=http://cale-annmarie-wedding.appspot.com/&p2i_device=6&p2i_screen=1024x768&p2i_&p2i_key={{ img_key }}">
-		</a>
+
+	<div class="card-deck py-3 justify-content-center">
+		{% for project in projects %}
+		<div class="card mt-4">
+			<div class="card-header">{{ project.name }}</div>
+			<div class="card-body">
+				<h5 class="card-title">{{ project.name }}</h5>
+				<p class="card-text">
+					{{ project.description }}
+				</p>
+			</div>
+		</div>
+		{% endfor %}
 	</div>
-	<div class="col-lg-5 col-md-4 mt-4 text-left">
-		<p>A built-from-scratch <strong>wedding website</strong>, including RSVP functionality, user verification via a NoSQL database, cookies, custom error handling, and email confirmation.</p>
-	</div>
-</div> -->
-<!-- End Python -->
 
 
-<!-- JS -->
-<div class="row justify-content-center align-items-center">
-	<div class="col-md-9 pt-5 text-center">
-		<h2>JavaScript & jQuery</h2>
-		<hr class="project-hr">
+	<!-- Python -->
+	<div class="row justify-content-center align-items-center">
+		<div class="col-md-9 pt-5">
+			<h2 class="text-center">Python</h2>
+			<hr class="project-hr">
+			<h5 style="font-style: italic; font-weight: 300;">la la la la la</h5>
+		</div>
 	</div>
-</div>
 
-<div class="card-group py-3">
+	<div class="row justify-content-center">
+		<div class="col-6">
+			<div class="card mt-4">
+				<iframe class="card-img-top" width="560" height="315" src="https://www.youtube.com/embed/wfDu1RsjIHQ"
+					frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
 
-	{% for app, info in apps.items %}
-	{% with name=info.name %}
-	{% with template=info.template %}
-	{% with icon=info.icon %}
-	{% with url=info.url %}
-	
-	<!-- Card -->
+
+
+	<!-- jQuery -->
+	<div class="row justify-content-center align-items-center">
+		<div class="col-md-9 pt-5 text-center">
+			<h2>jQuery</h2>
+			<hr class="project-hr">
+		</div>
+	</div>
+
+	<div class="card-group py-3">
+
+		{% for app, info in apps.items %}
+		{% with name=info.name %}
+		{% with template=info.template %}
+		{% with icon=info.icon %}
+		{% with url=info.url %}
+
+		<!-- Card -->
 		<div class="col-lg-3 col-md-4 col-sm-6 mt-4">
-			<a href="#" data-target="#{{ app }}-modal" data-toggle="modal" id="" class="card text-center text-white {% cycle 'bg-primary' 'bg-success' 'bg-info' 'bg-warning' 'bg-danger' %}">
+			<a href="#" data-target="#{{ app }}-modal" data-toggle="modal" id=""
+				class="card text-center text-white {% cycle 'bg-primary' 'bg-success' 'bg-info' 'bg-warning' 'bg-danger' %}">
 				<div class="card-body">
 					<h4 class="card-text"><i class="{{ icon }}"></i></h4>
 					<h5 class="card-text">{{ name }}</h5>
@@ -50,35 +74,36 @@
 			</a>
 		</div>
 
-	<!-- Modal -->
-		<div class="modal fade" id="{{ app }}-modal" tabindex="-1" role="dialog" aria-labelledby="{{ app }}-modal-label" aria-hidden="true">
+		<!-- Modal -->
+		<div class="modal fade" id="{{ app }}-modal" tabindex="-1" role="dialog" aria-labelledby="{{ app }}-modal-label"
+			aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content" id="{{ app }}-modal-content">
 					<div class="modal-header">
-    					<h5 class="modal-title">{{ name }}</h5>
-    					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-      						<span aria-hidden="true">&times;</span>
-    					</button>
-    				</div>
+						<h5 class="modal-title">{{ name }}</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
 					<div class="modal-body" id="{{ app }}-modal-body">
 						{% include template %}
 					</div>
 					<div class="modal-footer">
 						<a class="btn btn-primary" href="{{ url }}" target="_blank">GitHub</a>
-    					<button type="button" class="btn btn-secondary pull-right" data-dismiss="modal">Close</button>
-  					</div>
+						<button type="button" class="btn btn-secondary pull-right" data-dismiss="modal">Close</button>
+					</div>
 				</div>
 			</div>
 		</div>
 
-	{% endwith %}
-	{% endwith %}
-	{% endwith %}
-	{% endwith %}
-	{% endfor %}
+		{% endwith %}
+		{% endwith %}
+		{% endwith %}
+		{% endwith %}
+		{% endfor %}
 
-</div>
-<!-- End JS -->
+	</div>
+
 
 </div> <!-- End container -->
 
@@ -86,15 +111,15 @@
 
 
 {% block scripts %}
-	{% load staticfiles %}
-	<script src="{% static 'weather/js/weather.js' %}"></script>
-	<script src="{% static 'calculator/js/calc.js' %}"></script>
-	<script src="{% static 'pomodoro/js/pomodoro.js' %}"></script>
-	<script src="{% static 'tictactoe/js/tictactoe.js' %}"></script>
-	<script src="{% static 'simon/js/simon.js' %}"></script>
-	<script src="{% static 'wikipedia/js/wikipedia.js' %}"></script>
-	<script src="{% static 'workout/js/workout.js' %}"></script>
+{% load staticfiles %}
+<script src="{% static 'weather/js/weather.js' %}"></script>
+<script src="{% static 'calculator/js/calc.js' %}"></script>
+<script src="{% static 'pomodoro/js/pomodoro.js' %}"></script>
+<script src="{% static 'tictactoe/js/tictactoe.js' %}"></script>
+<script src="{% static 'simon/js/simon.js' %}"></script>
+<script src="{% static 'wikipedia/js/wikipedia.js' %}"></script>
+<script src="{% static 'workout/js/workout.js' %}"></script>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-	<script type="text/javascript"> moment().format(); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script type="text/javascript"> moment().format(); </script>
 {% endblock %}

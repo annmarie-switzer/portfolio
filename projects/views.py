@@ -10,7 +10,6 @@ import json, urllib.request, random, os
 # Create your views here.
 
 def projects(request):
-	img_key = os.environ.get('images_api')
 	apps = {
 		'calculator': {
 			'name': 'Calculator',
@@ -56,9 +55,15 @@ def projects(request):
 			},
 	}
 	
+	projects = [
+		{'name': 'DataDetect', 'description': 'Info about DataDetect'},
+		{'name': 'Connector Framework', 'description': 'Info about Connector Framework'},
+		{'name': 'Supervisor', 'description': 'Info about Supervisor'}
+	]
+
 	context = {
 		'apps': apps,
-		'img_key': img_key,	
+		'projects': projects
 	}
 	return render(request, 'projects/projects.html', context)
 

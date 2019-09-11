@@ -19,7 +19,6 @@ function generateWeather(position) {
 	const lng = position.coords.longitude;
 	const lat = position.coords.latitude;
 	$.getJSON(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=${weather_api}`, function(json) {
-		console.log(json);	
 		var fahrenheit = kelvinToFahrenheit(json.main.temp);
 		var celcius = kelvinToCelcius(json.main.temp);
 		var location = json.name;
