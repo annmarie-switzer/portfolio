@@ -32,6 +32,15 @@ a:focus, a:hover {
   border-top: solid 3px #17141F;
 }
 
+.card-deck .card {
+	border-radius: 0;
+}
+
+.card-deck .card-header {
+	font-size: 20px;
+	text-align: center;
+}
+
 
 /* ---------- MAIN ---------- */
 html {

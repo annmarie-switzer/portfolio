@@ -56,9 +56,8 @@ def projects(request):
 	}
 	
 	projects = [
-		{'name': 'DataDetect', 'description': 'Info about DataDetect'},
-		{'name': 'Connector Framework', 'description': 'Info about Connector Framework'},
-		{'name': 'Supervisor', 'description': 'Info about Supervisor'}
+		{'name': 'DataDetect', 'description': 'But the raven, sitting lonley on the placid bust spoke only that one word, as if his soul in that one word he did out pour.'},
+		{'name': 'Connector Framework', 'description': 'But the raven, sitting lonley on the placid bust spoke only that one word, as if his soul in that one word he did out pour.'},
 	]
 
 	context = {

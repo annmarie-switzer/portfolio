@@ -5,21 +5,24 @@
 
 	<!-- Angular -->
 	<div class="row justify-content-center align-items-center">
-		<div class="col-md-9 pt-5">
+		<div class="col-md-9 pt-5 text-center">
 			<h2 class="text-center">Angular</h2>
 			<hr class="project-hr">
+			<h5 class="mt-4" style="font-style: italic; font-weight: 300;">
+				But the raven, sitting lonley on the placid bust spoke only that one word, as if his soul in that one word he did out pour.
+			</h5>
 		</div>
 	</div>
 
 	<div class="card-deck py-3 justify-content-center">
 		{% for project in projects %}
-		<div class="card mt-4">
-			<div class="card-header">{{ project.name }}</div>
-			<div class="card-body">
-				<h5 class="card-title">{{ project.name }}</h5>
-				<p class="card-text">
-					{{ project.description }}
-				</p>
+		<div class="col-sm-6 mt-4">
+			<div class="card {% cycle 'border-primary' 'border-success' 'border-info' 'border-warning' 'border-danger' %}">
+				<div class="card-header text-white {% cycle 'bg-primary' 'bg-success' 'bg-info' 'bg-warning' 'bg-danger' %}">{{ project.name }}</div>
+				<div class="card-body">
+					<h5 class="card-title">{{ project.name }}</h5>
+					<p class="card-text">{{ project.description }}</p>
+				</div>
 			</div>
 		</div>
 		{% endfor %}
@@ -28,15 +31,17 @@
 
 	<!-- Python -->
 	<div class="row justify-content-center align-items-center">
-		<div class="col-md-9 pt-5">
+		<div class="col-md-9 pt-5 text-center">
 			<h2 class="text-center">Python</h2>
 			<hr class="project-hr">
-			<h5 style="font-style: italic; font-weight: 300;">la la la la la</h5>
+			<h5 class="mt-4" style="font-style: italic; font-weight: 300;">
+				But the raven, sitting lonley on the placid bust spoke only that one word, as if his soul in that one word he did out pour.
+			</h5>
 		</div>
 	</div>
 
 	<div class="row justify-content-center">
-		<div class="col-6">
+		<div class="col-8">
 			<div class="card mt-4">
 				<iframe class="card-img-top" width="560" height="315" src="https://www.youtube.com/embed/wfDu1RsjIHQ"
 					frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -46,12 +51,14 @@
 	</div>
 
 
-
 	<!-- jQuery -->
 	<div class="row justify-content-center align-items-center">
 		<div class="col-md-9 pt-5 text-center">
 			<h2>jQuery</h2>
 			<hr class="project-hr">
+			<h5 class="mt-4" style="font-style: italic; font-weight: 300;">
+				But the raven, sitting lonley on the placid bust spoke only that one word, as if his soul in that one word he did out pour.
+			</h5>
 		</div>
 	</div>
 
@@ -65,8 +72,12 @@
 
 		<!-- Card -->
 		<div class="col-lg-3 col-md-4 col-sm-6 mt-4">
-			<a href="#" data-target="#{{ app }}-modal" data-toggle="modal" id=""
-				class="card text-center text-white {% cycle 'bg-primary' 'bg-success' 'bg-info' 'bg-warning' 'bg-danger' %}">
+			<a
+				href="#"
+				data-target="#{{ app }}-modal"
+				data-toggle="modal"
+				id=""
+				class="card text-center text-white {% cycle 'bg-info' 'bg-warning' 'bg-danger' 'bg-primary' 'bg-success' %}">
 				<div class="card-body">
 					<h4 class="card-text"><i class="{{ icon }}"></i></h4>
 					<h5 class="card-text">{{ name }}</h5>
