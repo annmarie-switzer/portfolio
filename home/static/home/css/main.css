@@ -32,10 +32,6 @@ a:focus, a:hover {
   border-top: solid 3px #17141F;
 }
 
-.angular-card .card-header {
-	font-size: 20px;
-	text-align: center;
-}
 .jquery-card {
 	border-radius: 0.25rem !important;
 }

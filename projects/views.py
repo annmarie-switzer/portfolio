@@ -56,8 +56,18 @@ def projects(request):
 	}
 	
 	projects = [
-		{'name': 'DataDetect', 'description': 'But the raven, sitting lonley on the placid bust spoke only that one word, as if his soul in that one word he did out pour.'},
-		{'name': 'Connector Framework', 'description': 'But the raven, sitting lonley on the placid bust spoke only that one word, as if his soul in that one word he did out pour.'},
+		{
+			'name': 'DataDetect',
+			'description': 'An application for file system data analysis and action. The frontend is an Angular 7 web app connecting to a .NET/Elastic/PostgreSQL backend, styled with the Angular Material component library. <br><br> The UI was designed with the idea that a user will want to "scan, act, and move on." Therefore, the workflow is very concise but also extremely versatile, giving a user multiple ways to search, analyze, and tag documents, as well as maintaing query terms through navigation events.'
+		},
+		{
+			'name': 'Connector Framework',
+			'description': 'A tool used to get data from social media platforms and transform that data into an archiveable format. The frontend is Angular 8, the backend is .NET/MariaDB, and styling is based on the Angular Material component library. <br><br>  The core functionality of this application is based on a very long and potentially confusing list of config options, so the UI utilizes a wizard-style workflow with carefully styled calls-to-action to make the user workflow as intuitive and simple as possible.'
+		},
+		{
+			'name': 'Sparkit',
+			'description': 'Sparkit is an application that connects event hosts to prospective event goers. My primary responsibility for the application has been user CRUD functionality and authentication, as well as styling the associated pages. The application uses Django\'s model-based forms and authentication middleware along with PostgreSQL.'
+		},
 	]
 
 	context = {

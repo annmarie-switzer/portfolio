@@ -5,61 +5,62 @@
 
 	<!-- Angular -->
 	<div class="row justify-content-center align-items-center">
-		<div class="col-md-9 pt-5">
+		<div class="col-md-7 pt-5">
 			<h2 class="text-center">Angular</h2>
 			<hr class="project-hr">
-			<h5 class="mt-4" style="font-style: italic; font-weight: 300;">
-				But the raven, sitting lonley on the placid bust spoke only that one word, as if his soul in that one word he did out pour.
-			</h5>
+			<p class="mt-4 text-center">
+				At Sceven Development, I am the primary frontend engineer, responsible for both greenfield and existing applications. These web apps are all part of a loosely-defined suite of corporate data management tools.
+			</p>
 		</div>
 	</div>
 
-	<div class="card-deck py-3 justify-content-center">
+	<div class="card-group py-3">
 		{% for project in projects %}
-		<!-- <div class="col-md-6 col-lg-4 mt-4"> -->
-			<div class="card angular-card {% cycle 'border-primary' 'border-success' 'border-info' 'border-warning' 'border-danger' %}">
-				<div class="card-header text-white {% cycle 'bg-primary' 'bg-success' 'bg-info' 'bg-warning' 'bg-danger' %}">{{ project.name }}</div>
+		<div class="col-sm-6 mt-4">
+			<div class="card text-white {% cycle 'bg-primary' 'bg-success' 'bg-info' 'bg-warning' 'bg-danger' %}">
 				<div class="card-body">
-					<h5 class="card-title">{{ project.name }}</h5>
-					<p class="card-text">{{ project.description }}</p>
+					<h5 class="card-title w-75 d-flex justify-content-between" style="border-bottom: solid 2px white;">
+						<span>{{ project.name }}</span>
+						<i class="{{ project.icon }}"></i>
+					</h5>
+					<p class="card-text" style="font-weight: 300;">{{ project.description | safe }}</p>
 				</div>
-				<div class="card-footer">blaaahhh</div>
 			</div>
-		<!-- </div> -->
+		</div>
 		{% endfor %}
 	</div>
 
 
 	<!-- Django/Python -->
-	<div class="row justify-content-center align-items-center">
-		<div class="col-md-9 pt-5 mt-3">
+	<!-- <div class="row justify-content-center align-items-center">
+		<div class="col-md-7 pt-5 mt-3">
 			<h2 class="text-center">Python</h2>
 			<hr class="project-hr">
-			<h5 class="mt-4" style="font-weight: 300;">
-				My primary role on this project was user CRUD functionality and authentication. Django's model-based forms allow for succint, stackable templates. Authentication is managed with Django's authentication middleware and all data is maintained with PostgreSQL.
-			</h5>
+			<p class="mt-4 text-center">
+				Sparkit is an application that connects event hosts to prospective event goers. My primary responsibility for the application has been user CRUD functionality and authentication, as well as styling the associated pages. The application uses Django's model-based forms and authentication middleware along with PostgreSQL.
+			</p>
 		</div>
 	</div>
 
 	<div class="row justify-content-center">
-		<div class="col-8">
+		<div class="col-sm-8">
 			<div class="card mt-4">
 				<iframe class="card-img-top" width="560" height="315" src="https://www.youtube.com/embed/wfDu1RsjIHQ"
 					frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen></iframe>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 
 	<!-- jQuery -->
 	<div class="row justify-content-center align-items-center">
-		<div class="col-md-9 pt-5 mt-3">
+		<div class="col-md-7 pt-5 mt-3">
 			<h2 class="text-center">jQuery</h2>
 			<hr class="project-hr">
-			<h5 class="mt-4" style="font-style: italic; font-weight: 300;">
-				But the raven, sitting lonley on the placid bust spoke only that one word, as if his soul in that one word he did out pour.
-			</h5>
+			<p class="mt-4 text-center">
+				A series of small JavaScript challenges from <em>freeCodeCamp</em>.
+			</p>
 		</div>
 	</div>
 
