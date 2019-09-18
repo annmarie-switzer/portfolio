@@ -1,124 +1,155 @@
 {% extends 'home/base.html' %}
 {% block body %}
 
-<div class="container pb-5">
+<div class="container">
+	<div class="row justify-content-center" style="margin-top: 8%;">
+		
+		<!-- Tab Content -->
+		<div class="col-md-9">
+			<div class="tab-content" id="v-pills-tabContent">
 
-	<!-- Angular -->
-	<div class="row justify-content-center align-items-center">
-		<div class="col-md-7 pt-5">
-			<h2 class="text-center">Angular</h2>
-			<hr class="project-hr">
-			<p class="mt-4 text-center">
-				At Sceven Development, I am the primary frontend engineer, responsible for both greenfield and existing applications. These web apps are all part of a loosely-defined suite of corporate data management tools.
-			</p>
-		</div>
-	</div>
-
-	<div class="card-group py-3">
-		{% for project in projects %}
-		<div class="col-sm-6 mt-4">
-			<div class="card text-white {% cycle 'bg-primary' 'bg-success' 'bg-info' 'bg-warning' 'bg-danger' %}">
-				<div class="card-body">
-					<h5 class="card-title w-75 d-flex justify-content-between" style="border-bottom: solid 2px white;">
-						<span>{{ project.name }}</span>
-						<i class="{{ project.icon }}"></i>
-					</h5>
-					<p class="card-text" style="font-weight: 300;">{{ project.description | safe }}</p>
+				<div id="v-pills-connector"
+					class="tab-pane fade show active"
+					role="tabpanel"
+					aria-labelledby="v-pills-connector-tab">
+					Connector Framework
 				</div>
-			</div>
-		</div>
-		{% endfor %}
-	</div>
-
-
-	<!-- Django/Python -->
-	<!-- <div class="row justify-content-center align-items-center">
-		<div class="col-md-7 pt-5 mt-3">
-			<h2 class="text-center">Python</h2>
-			<hr class="project-hr">
-			<p class="mt-4 text-center">
-				Sparkit is an application that connects event hosts to prospective event goers. My primary responsibility for the application has been user CRUD functionality and authentication, as well as styling the associated pages. The application uses Django's model-based forms and authentication middleware along with PostgreSQL.
-			</p>
-		</div>
-	</div>
-
-	<div class="row justify-content-center">
-		<div class="col-sm-8">
-			<div class="card mt-4">
-				<iframe class="card-img-top" width="560" height="315" src="https://www.youtube.com/embed/wfDu1RsjIHQ"
-					frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen></iframe>
-			</div>
-		</div>
-	</div> -->
-
-
-	<!-- jQuery -->
-	<div class="row justify-content-center align-items-center">
-		<div class="col-md-7 pt-5 mt-3">
-			<h2 class="text-center">jQuery</h2>
-			<hr class="project-hr">
-			<p class="mt-4 text-center">
-				A series of small JavaScript challenges from <em>freeCodeCamp</em>.
-			</p>
-		</div>
-	</div>
-
-	<div class="card-group py-3">
-
-		{% for app, info in apps.items %}
-		{% with name=info.name %}
-		{% with template=info.template %}
-		{% with icon=info.icon %}
-		{% with url=info.url %}
-
-		<!-- Card -->
-		<div class="col-lg-3 col-md-4 col-sm-6 mt-4">
-			<a
-				href="#"
-				data-target="#{{ app }}-modal"
-				data-toggle="modal"
-				id=""
-				class="card jquery-card text-center text-white {% cycle 'bg-info' 'bg-warning' 'bg-danger' 'bg-primary' 'bg-success' %}">
-				<div class="card-body">
-					<h4 class="card-text"><i class="{{ icon }}"></i></h4>
-					<h5 class="card-text">{{ name }}</h5>
+				
+				<div id="v-pills-datadetect"
+					class="tab-pane fade"
+					role="tabpanel"
+					aria-labelledby="v-pills-datadetect-tab">
+					DataDetect
 				</div>
-			</a>
-		</div>
+				
+				<div id="v-pills-sparkit"
+					class="tab-pane fade"
+					role="tabpanel"
+					aria-labelledby="v-pills-sparkit-tab">
+					
+					<iframe
+						width="560"
+						height="315"
+						src="https://www.youtube.com/embed/wfDu1RsjIHQ"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen>
+					</iframe>
 
-		<!-- Modal -->
-		<div class="modal fade" id="{{ app }}-modal" tabindex="-1" role="dialog" aria-labelledby="{{ app }}-modal-label"
-			aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content" id="{{ app }}-modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title">{{ name }}</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body" id="{{ app }}-modal-body">
-						{% include template %}
-					</div>
-					<div class="modal-footer">
-						<a class="btn btn-primary" href="{{ url }}" target="_blank">GitHub</a>
-						<button type="button" class="btn btn-secondary pull-right" data-dismiss="modal">Close</button>
+				</div>
+
+				<div id="v-pills-other"
+					class="tab-pane fade"
+					role="tabpanel"
+					aria-labelledby="v-pills-settings-tab">
+				
+					<div class="card-group py-3">
+				
+						{% for app, info in apps.items %}
+						{% with name=info.name %}
+						{% with template=info.template %}
+						{% with icon=info.icon %}
+						{% with url=info.url %}
+				
+						
+						<div class="col-lg-4 col-md-6 mt-4">
+							<a href="#" data-target="#{{ app }}-modal" data-toggle="modal"
+								class="card jquery-card text-center text-white {% cycle 'bg-info' 'bg-warning' 'bg-danger' 'bg-success' %}">
+								<div class="card-body">
+									<h4 class="card-text"><i class="{{ icon }}"></i></h4>
+									<h5 class="card-text">{{ name }}</h5>
+								</div>
+							</a>
+						</div>
+				
+						
+						<div class="modal fade" id="{{ app }}-modal" tabindex="-1" role="dialog" aria-labelledby="{{ app }}-modal-label"
+							aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content" id="{{ app }}-modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title">{{ name }}</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body" id="{{ app }}-modal-body">
+										{% include template %}
+									</div>
+									<div class="modal-footer">
+										<a class="btn btn-primary" href="{{ url }}" target="_blank">GitHub</a>
+										<button type="button" class="btn btn-secondary pull-right" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+				
+						{% endwith %}
+						{% endwith %}
+						{% endwith %}
+						{% endwith %}
+						{% endfor %}
+				
 					</div>
 				</div>
+
 			</div>
 		</div>
 
-		{% endwith %}
-		{% endwith %}
-		{% endwith %}
-		{% endwith %}
-		{% endfor %}
+		<!-- Tabs -->
+		<div class="col-md-3 d-none d-md-block text-right">
+			<div
+				class="nav flex-column nav-pills"
+				id="v-pills-tab"
+				role="tablist"
+				aria-orientation="vertical">
+				<h5 class="nav-link disabled">Projects</h5>
+				<a
+					class="nav-link active"
+					id="v-pills-connector-tab"
+					data-toggle="pill"
+					href="#v-pills-connector"
+					role="tab"
+					aria-controls="v-pills-connector"
+					aria-selected="true">
+					<span>Connector Framework</span>
+				</a>
+				<a
+					class="nav-link"
+					id="v-pills-datadetect-tab"
+					data-toggle="pill"
+					href="#v-pills-datadetect"
+					role="tab"
+					aria-controls="v-pills-datadetect"
+					aria-selected="false">
+					<span>DataDetect</span>
+				</a>
+				<a
+					class="nav-link"
+					id="v-pills-sparkit-tab"
+					data-toggle="pill"
+					href="#v-pills-sparkit"
+					role="tab"
+					aria-controls="v-pills-sparkit"
+					aria-selected="false">
+					<span>Sparkit</span>
+				</a>
+				<a
+					class="nav-link"
+					id="v-pills-other-tab"
+					data-toggle="pill"
+					href="#v-pills-other"
+					role="tab"
+					aria-controls="v-pills-other"
+					aria-selected="false">
+					<span>Other</span>
+				</a>
+			</div>
+
+		</div>
 
 	</div>
-
-
-</div> <!-- End container -->
+</div>
 
 {% endblock %}
 
