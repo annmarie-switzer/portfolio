@@ -7,7 +7,7 @@ name = "pypi"
 "dj-database-url" = "==0.4.1"
 django = "==1.11.5"
 gunicorn = "==19.6.0"
-"psycopg2" = "==2.6.2"
+"psycopg2" = "==2.7"
 whitenoise = "==3.2"
 sendgrid = "*"
 
