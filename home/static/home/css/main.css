@@ -36,15 +36,12 @@ a:focus, a:hover {
 	border-radius: 0.25rem !important;
 }
 
-.nav-pills .active {
-	/* background-color: transparent !important;
-	color: #593196 !important; */
+.nav .active-proj {
+	color: white;
 	background-color: #593196 !important;
+	border-radius: 0.25rem;
 }
 
-/* .nav-pills .active span {
-	border-bottom: #593196 solid 2px;
-} */
 
 /* ---------- MAIN ---------- */
 html {

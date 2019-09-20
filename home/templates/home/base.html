@@ -16,6 +16,7 @@
 	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="{% static 'home/css/bootswatch.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'home/css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'home/fonts/icomoon-v1.0/style.css' %}">
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,300,300i" rel="stylesheet">
@@ -24,7 +25,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-md navbar-dark {% if 'about' in request.path or 'projects' in request.path or 'blog' in request.path or 'contact' in request.path %} bg-dark sticky-top {% else %} fixed-top {% endif %}">
+	<nav class="navbar navbar-expand-md navbar-dark {% if 'about' in request.path or 'projects' in request.path or 'blog' in request.path or 'contact' in request.path %} bg-dark {% else %} fixed-top {% endif %}">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="{% url 'home:home' %}">&nbsp;</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
